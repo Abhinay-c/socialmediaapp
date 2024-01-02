@@ -3,7 +3,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { addDoc, collection } from "firebase/firestore";
 import { db, auth } from "../../config/firebase";
-import { useAuthState } from  "react-firebase-hooks/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 interface CreateFormData {
     title: string;
@@ -23,21 +23,26 @@ export const CreateForm = () => {
         resolver: yupResolver(schema),
     });
     const postsRef = collection(db, "posts");
-    const onCreatePost =  async (data: CreateFormData) => {
+    const onCreatePost = async (data: CreateFormData) => {
         await addDoc(postsRef, {
             title: data.title,
             description: data.description,
-            username : user?.displayName,
-            userId: user?.uid,  
-        })
+            username: user?.displayName,
+            userId: user?.uid,
+        });
     };
     return (
-        <form onSubmit={handleSubmit(onCreatePost)}>
-            <input type="text" placeholder="Title" {...register("title")} />
-            <p style={{ color: "red" }}>{errors.title?.message}</p>
-            <textarea placeholder="Description" {...register("description")} />
-            <p style={{ color: "red" }}>{errors.description?.message}</p>
-            <input type="submit" />
-        </form>
+        <div className="create-post">
+            <form onSubmit={handleSubmit(onCreatePost)}>
+                <input type="text" placeholder="Title" {...register("title")} />
+                <p>{errors.title?.message}</p>
+                <textarea
+                    placeholder="Description"
+                    {...register("description")}
+                />
+                <p>{errors.description?.message}</p>
+                <input type="submit" className="btn"/>
+            </form>
+        </div>
     );
 };
