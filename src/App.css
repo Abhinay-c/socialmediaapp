@@ -63,6 +63,35 @@
   cursor: pointer;
 }
 
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10rem 0 20rem 0;
+}
+
+.login p{
+  font-weight: bold;
+  margin: 3rem 0 3rem 0;  
+}
+
+.login button {
+  font-weight: bold;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  width: 25vw;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.login button:hover {
+  background-color: #222831;
+  color: white;
+  cursor: pointer;
+}
+
 .create-post {
   background-color: #393E46;
   display: flex;
