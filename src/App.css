@@ -71,9 +71,9 @@
   padding: 10rem 0 20rem 0;
 }
 
-.login p{
+.login p {
   font-weight: bold;
-  margin: 3rem 0 3rem 0;  
+  margin: 3rem 0 3rem 0;
 }
 
 .login button {
@@ -136,4 +136,41 @@ textarea {
   textarea {
     width: 80vw;
   }
+}
+
+.Post {
+  background-color: #393E46;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem 0 2rem 0;
+  margin: 1rem 3rem 1rem 3rem;
+  border-radius: 1rem;
+}
+
+.Post:hover {
+  background-color: #222831;
+  box-shadow: 0px 0px 10px #00ADB5;
+}
+
+.Post .title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 1rem;
+  font-family: Times, serif;
+}
+
+.Post .footer {
+  margin: 1.5rem 0 0 0;
+}
+
+.Post span {
+  color: #00ADB5;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.Post span:hover {
+  cursor: pointer;
 }
