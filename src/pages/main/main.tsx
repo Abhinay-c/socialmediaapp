@@ -2,6 +2,9 @@ import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../config/firebase";
 import { useState, useEffect } from "react";
 import { Post } from "./post";
+import { auth } from "../../config/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
+
 
 export interface Post {
     title: string;
@@ -23,6 +26,10 @@ export const Main = () => {
     useEffect(() => {
         getPosts();
     }, []);
+    const [user] = useAuthState(auth);
+    if (!user) {
+        return <div className="LoginRequest">PLEASE LOGIN TO CONTINUE...</div>;
+    }
     return (
         <div>
             {postsList?.map((post) => (

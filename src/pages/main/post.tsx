@@ -1,13 +1,10 @@
 import { Post as IPost } from "./main";
-import { auth } from "../../config/firebase";
-import { useAuthState } from "react-firebase-hooks/auth";
 
 interface Props {
     post: IPost;
 }
 
 export const Post = (props: Props) => {
-    const [user] = useAuthState(auth);
     const { post } = props;
     return (
         <div className="Post">

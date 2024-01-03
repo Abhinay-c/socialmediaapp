@@ -138,6 +138,12 @@ textarea {
   }
 }
 
+.LoginRequest {
+  padding: 10rem 0 30rem 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
 .Post {
   background-color: #393E46;
   color: white;
